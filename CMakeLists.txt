@@ -82,46 +82,18 @@ if(EMSCRIPTEN)
     )
 endif()
 
-
-if (CEGUI_SAMPLES_RENDERER_OPENGL_ACTIVE)
-    # Append OpenGL and OpenGL3 files
-    list (APPEND CORE_SOURCE_FILES
-        ./src/CEGuiGLFWSharedBase.cpp
-    )
-
-    if (CEGUI_BUILD_RENDERER_OPENGL)
-        list (APPEND CORE_SOURCE_FILES
-            ./src/CEGuiOpenGLBaseApplication.cpp
-        )
-    endif()
-
-    if (CEGUI_BUILD_RENDERER_OPENGL3)
-        list (APPEND CORE_SOURCE_FILES
-            ./src/CEGuiOpenGL3BaseApplication.cpp
-        )
-    endif()
-
-endif()
-
-#    ${CMAKE_BINARY_DIR}/samples/common/include/
-#     src/main.cpp
-#    src/cegui.cpp
-#    src/AssetManager.cpp
-#    src/FileSystem.cpp
-#    src/check_err.cpp
-
 CreateProgram(${PROJECT_NAME}
 FILES
-    samples_framework/src/SamplesFrameworkBase.cpp
-    samples_framework/src/SamplesFramework.cpp
-    samples_framework/src/CEGuiBaseApplication.cpp
-    samples_framework/src/CEGuiGLES2BaseApplication.cpp
-    samples_framework/src/Samples_xmlHandler.cpp
-    samples_framework/src/SampleData.cpp
-    samples_framework/src/MetaDataWindowManager.cpp
-    samples_framework/src/SamplesBrowserManager.cpp
+    src/SamplesFrameworkBase.cpp
+    src/SamplesFramework.cpp
+    src/CEGuiBaseApplication.cpp
+    src/CEGuiGLES2BaseApplication.cpp
+    src/Samples_xmlHandler.cpp
+    src/SampleData.cpp
+    src/MetaDataWindowManager.cpp
+    src/SamplesBrowserManager.cpp
 INCLUDES
-    samples_framework/include/
+    include/
     lib/samples/common/include/
     lib/cegui/include
     ${SDL2_INCLUDE_DIRS}
