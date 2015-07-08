@@ -1,0 +1,12 @@
+.scons-option-cache
+/.sconsign.dblite
+scons/*.pyc
+build*/
+/lib/cegui/linux
+/lib/cegui/emscripten
+
+/CMakeFiles
+/wesnoth
+/wesmere
+/phoenix*
+*.log
