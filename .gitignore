@@ -1,0 +1,17 @@
+CEGUI.log
+CMakeLists.txt
+CMakeCache.txt
+Makefile
+*.cmake
+*.a
+samples/CMakeFiles/
+build/
+build_em/
+lib/
+samples/expat*
+samples/pcre*
+samples/cegui*
+samples/freetype*
+samples/SILLY*
+samples/lodepng/
+samples/*.c
