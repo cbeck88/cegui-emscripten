@@ -538,7 +538,7 @@ bool Demo6Sample::handleDeleteRow(const CEGUI::EventArgs& args)
     CEGUI::uint idx = atoi(idxbox->getText().c_str());
 
     // attempt to delete the row, if it would not cause an error
-    if (idx < mcl->getRowCount()) {
+    if (mcl->getColumnCount() && idx < mcl->getRowCount()) {
         mcl->removeRow(idx);
     }
 
