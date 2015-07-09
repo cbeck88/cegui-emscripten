@@ -7,11 +7,11 @@ Some changes needed to be made to the samples framework so that it is all linked
 There was also a complete replacement of the build system. This was in order to make it easier to build on emscripten without compromising the ability to make native builds.
 
 Reorg / renames:
-datafiles/ 			-> assets/
-samples_framework/include 	-> include/
-samples_framework/src		-> src/
-samples/			-> lib/samples/
-CEGUI				-> lib/CEGUI/
+- datafiles/ 			-> assets/
+- samples_framework/include 	-> include/
+- samples_framework/src		-> src/
+- samples/			-> lib/samples/
+- CEGUI/			-> lib/CEGUI/
 
 External dependencies (for emscripten build)
 - CMake version >= 2.8.12	
