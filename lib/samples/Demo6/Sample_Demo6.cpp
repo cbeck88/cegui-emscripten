@@ -476,13 +476,10 @@ bool Demo6Sample::handleDeleteColumn(const CEGUI::EventArgs& args)
     // obtain the id of the column to be deleted
     CEGUI::uint id = atoi(idbox->getText().c_str());
 
-    // attempt to delete the column, ignoring any errors.
-    CEGUI_TRY
-    {
+    // attempt to delete the column, if it would not cause an error
+    if (id < mcl->getColumnCount()) {
         mcl->removeColumnWithID(id);
     }
-    CEGUI_CATCH (InvalidRequestException)
-    {}
 
     // reset the delete column ID box.
     idbox->setText("");
@@ -540,13 +537,10 @@ bool Demo6Sample::handleDeleteRow(const CEGUI::EventArgs& args)
     // get index of row to delete.
     CEGUI::uint idx = atoi(idxbox->getText().c_str());
 
-    // attempt to delete the row, ignoring any errors.
-    CEGUI_TRY
-    {
+    // attempt to delete the row, if it would not cause an error
+    if (idx < mcl->getRowCount()) {
         mcl->removeRow(idx);
     }
-    CEGUI_CATCH (InvalidRequestException)
-    {}
 
     // clear the row index box
     idxbox->setText("");
