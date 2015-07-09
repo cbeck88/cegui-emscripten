@@ -12,6 +12,8 @@ There was also a complete replacement of the build system. This was in order to 
       http://www.cmake.org/
 - Emscripten (master branch)  
       http://www.emscripten.org/
+- Node.js (needed by Emscripten. v0.10 suffices, but a more recent version like v0.12.4 will allow the js optimizer portion of Emscripten to run faster)
+
 - That's it!
 
 For a detailed installation guide please see here: http://developer.humblebundle.com/post/112252930481/developing-for-asm-js-using-sdl2
