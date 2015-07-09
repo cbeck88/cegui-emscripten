@@ -27,15 +27,15 @@
 
 A port of CEGUI to OpenGLES2 / WebGL, and its dependencies, such that it can run in your browser as javascript with no plugins required. (See <a href=http://kripken.github.io/emscripten-site/index.html> emscripten </a> for details.)
 
-<p>Notes: </p>
+<p> This project is built using the build system <a href="http://developer.humblebundle.com/post/112252930481/developing-for-asm-js-using-sdl2"> developed </a> by the humble bundle developers for <a href="http://developer.humblebundle.com/post/112252930481/developing-for-asm-js-using-sdl2"> a sample game </a>.
 
-<p>I hacked up the build system significantly to make it more like the cmake script for my existing project -- this was simpler than trying to add features to the standard cegui cmake script. Part of the reason is that any data files used by the resulting javascript need to be mounted into a virtual filesystem, and the cmake script I was using has some built-in stuff to do this which I wanted to use rather than reinvent.</p>
+<p> In fact, you can think of this project as a template for a CEGUI-based game targetting the humble store / humble widget. </p>
 
-<p>"samples_framework/include" has become "include" and "samples_framework/src" has become "src", and "samples" has been moved into "lib". "CEGUI" is also in lib, as is the source of all of the dependencies I am building with (except SDL2, gles2, libpng, zlib). Because, this is much simpler for emscripten.</p>
+<p> For help building / an introduction to emscripten I recommend to read <a href="http://developer.humblebundle.com/post/112252930481/developing-for-asm-js-using-sdl2"> that blog post </a>. Also, I put detailed notes in the README.md in the root of repository. </p>
 
-<p>I had to change the GL renderer a bit so that it works with OpenGLES2 / WebGL. </p>
+<p> Enjoy! </p>
 
-<p>Caveat Emptor: My GLES2 port is not really finished, some functions I simply commented out and replaced with <code>assert(false &amp;&amp; "Not implemented yet!");</code> </p>
+<p><b>Caveat Emptor</b>: My GLES2 port is not really finished, some functions I simply commented out and replaced with <code>assert(false &amp;&amp; "Not implemented yet!");</code> </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/cbeck88/cegui-emscripten">Cegui-emscripten</a> is maintained by <a href="https://github.com/cbeck88">cbeck88</a>.</span>
