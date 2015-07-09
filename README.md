@@ -8,13 +8,13 @@ There was also a complete replacement of the build system. This was in order to 
 
 Reorg / renames:
 
-CEGUI v0-8 branch               |  here
-===============================================
-- datafiles/ 			| assets/
-- samples_framework/include 	| include/
-- samples_framework/src		| src/
-- samples/			| lib/samples/
-- CEGUI/			| lib/CEGUI/
+| CEGUI v0-8 branch             |  here        |
+|----------------------------------------------|
+| datafiles/ 			| assets/      |
+| samples_framework/include 	| include/     |
+| samples_framework/src		| src/         |
+| samples/			| lib/samples/ |
+| CEGUI/			| lib/CEGUI/   |
 
 External dependencies (for emscripten build)  
 - CMake version >= 2.8.12	
