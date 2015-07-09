@@ -175,10 +175,10 @@ CEGuiGLES2BaseApplication::CEGuiGLES2BaseApplication()
 
 	SDL_Init(SDL_INIT_VIDEO);
 
-	int width = 800, height = 600;
+	int width = 1200, height = 600;
 #ifdef USE_HUMBLE_API
 	if (humble_get_player_size(&width, &height) == 0) {
-		width = 800;
+		width = 1200;
 		height = 600;
 	}
 #endif
