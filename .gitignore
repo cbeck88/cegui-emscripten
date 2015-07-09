@@ -4,6 +4,7 @@ scons/*.pyc
 build*/
 /lib/cegui/linux
 /lib/cegui/emscripten
+/samples
 
 /CMakeFiles
 /wesnoth
