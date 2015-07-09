@@ -13,8 +13,8 @@ cd build_em
 # c.f. https://groups.google.com/forum/#!topic/android-building/dT-2d7khe5c
 # Note: trying to use emscripten "jcache" on the debug build instead of ccache
 
-#export COMMON_FLAGS="-O3 -s USE_LIBPNG=1 -s USE_ZLIB=1 -v"
-export COMMON_FLAGS="-Os -s USE_LIBPNG=1 -s USE_ZLIB=1"
+export COMMON_FLAGS="-O3 -s USE_LIBPNG=1 -s USE_ZLIB=1"
+#export COMMON_FLAGS="-Os -s USE_LIBPNG=1 -s USE_ZLIB=1"
 export DEBUG_FLAGS=""
 #export DEBUG_FLAGS="-s SAFE_HEAP=1 -s ALIASING_FUNCTION_POINTERS=0"
 export CXX_FLAGS="$COMMON_FLAGS -std=c++11 -Wno-unused -Wno-format -Wno-switch -Wno-\#pragma-messages -s USE_SDL=2 -s DEMANGLE_SUPPORT=1 -s TOTAL_MEMORY=500000000 -s NO_EXIT_RUNTIME=1" #$DEBUG_FLAGS"
