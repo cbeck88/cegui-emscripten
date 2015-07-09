@@ -91,13 +91,6 @@ When characters are requested to be displayed for the first time, CEGUI might ne
     credits         = "Andrew Zabolotny"
 />
 <SampleDefinition
-    name      = "CEGUICommonDialogsDemo"
-    type      = "C++ Module"
-    summary         = "Shows the functionalities of the Common Dialogues library. Currently this library consists only of the ColourPicker for CEGUI. It can be opened by clicking one of the coloured rectangle in the demo."
-    description     = "The demo uses the &quot;Vanilla/ColourPicker&quot; widget"
-    credits         = "CrazyEddie, Lukas &quot;Ident&quot; Meindl"
-/>
-<SampleDefinition
     name      = "CEGUIWidgetDemo"
     type      = "C++ Module"
     summary         = "The widget demo allows to choose a widget from the stock CEGUI skins. The widget will then be displayed and can be interacted with. In addition all occuring events will be logged in the event logger below the widget display. By accessing the &quot;Properties&quot; tab, the user can see all properties the widget has and their respective current values."

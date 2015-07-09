@@ -108,24 +108,22 @@ int SamplesFrameworkBase::run()
 *************************************************************************/
 bool SamplesFrameworkBase::runApplication()
 {
-    {
 	d_baseApp = new CEGuiGLES2BaseApplication();
 
-        // run the base application (which sets up the demo via 'this' and runs it.
-        if (d_baseApp->execute(this))
-        {
-            // signal that app initialised and ran
-            return true;
-        }
+	// run the base application (which sets up the demo via 'this' and runs it.
+	if (d_baseApp->execute(this))
+	{
+		// signal that app initialised and ran
+		return true;
+	}
 
 #ifndef EMSCRIPTEN
-        // sample app did not initialise, delete the object.
-        delete d_baseApp;
-        d_baseApp = 0;
-    }
+	// sample app did not initialise, delete the object.
+	delete d_baseApp;
+	d_baseApp = 0;
 
-    // signal app did not initialise and run.
-    return false;
+	// signal app did not initialise and run.
+	return false;
 #else
 	return true;
 #endif

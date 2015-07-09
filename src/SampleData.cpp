@@ -42,6 +42,8 @@ author:     Lukas E Meindl
 #include "CEGUI/Window.h"
 #include "CEGUI/Vector.h"
 
+#include <iostream>
+
 using namespace CEGUI;
 
 #define S_(X) #X
@@ -249,12 +251,19 @@ void SampleDataModule::deinitialise()
     SampleData::deinitialise();   
 }
 
-#define SAMPLE_CASE( X ) 		\
-do {					\
-	if (d_name == #X) {		\
-		d_sample = & get_##X(); \
-		return;			\
-	}				\
+
+#define STRINGIFY(X) #X
+
+#define ADD_CEGUI(X) CEGUI##X
+
+#define SAMPLE_CASE( X ) 					\
+do {								\
+	std::string foo = STRINGIFY(CEGUI##X);		\
+	std::cerr << foo << std::endl;				\
+	if (d_name == foo) {					\
+		d_sample = & get_##X(); 			\
+		return;						\
+	}							\
 } while (0)
 
 void SampleDataModule::getSampleInstanceFromDLL()
@@ -271,7 +280,6 @@ void SampleDataModule::getSampleInstanceFromDLL()
 
     d_sample =  &(functionPointerGetSample());*/
 
-	SAMPLE_CASE( CommonDialogsDemo );
 	SAMPLE_CASE( HelloWorldDemo );
 	SAMPLE_CASE( LookNFeelOverviewDemo );
 	SAMPLE_CASE( GameMenuDemo );
@@ -281,11 +289,10 @@ void SampleDataModule::getSampleInstanceFromDLL()
 	SAMPLE_CASE( EffectsDemo );
 	SAMPLE_CASE( FontDemo );
 	SAMPLE_CASE( Demo6 );
-	SAMPLE_CASE( EditboxValidation );
+	SAMPLE_CASE( EditboxValidationDemo );
 	SAMPLE_CASE( Minesweeper );
 	SAMPLE_CASE( ScrollablePaneDemo );
 	SAMPLE_CASE( TabControlDemo );
-	SAMPLE_CASE( CommonDialogsDemo );
 	SAMPLE_CASE( WidgetDemo );
 	SAMPLE_CASE( TextDemo );
 	SAMPLE_CASE( TreeDemo );

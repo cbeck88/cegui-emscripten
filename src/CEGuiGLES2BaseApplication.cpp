@@ -48,6 +48,10 @@ author:     Paul D Turner
 #include <stdexcept>
 #include <sstream>
 
+#ifdef USE_HUMBLE_API
+#include "humble_api.h"
+#endif
+
 //----------------------------------------------------------------------------//
 CEGuiGLES2BaseApplication* CEGuiGLES2BaseApplication::d_appInstance = 0;
 double  CEGuiGLES2BaseApplication::d_frameTime = 0;

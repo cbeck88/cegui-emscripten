@@ -8,11 +8,6 @@ PROJECT(cegui)
 # - enough OpenGL to render the widgets.
 #
 # Possible addons are PCRE (regex) and Fribidi (bidirectional text like hebrew or arabic)
-#
-# We currently have SILLY and expat in tree. Freetype is still external.
-# However, Freetype version 2.4.4 is built in the emscripten test module in the master repository.
-# We will probably favor to use that rather than bring it also in tree, hopefully it will become
-# built-in like zlib and libpng.
 
 set(render_dir "src/RendererModules/OpenGLES2")
 set(render_libs ${OPENGLES2_LIBRARIES})
@@ -36,7 +31,6 @@ DIRS
 EXCLUDE
     src/DynamicModule.cpp
     src/minibidi.cpp
-    src/PCRERegexMatcher.cpp
     src/FribidiVisualMapping.cpp
     src/MinibidiVisualMapping.cpp
     src/MinizipResourceProvider.cpp
@@ -45,6 +39,7 @@ INCLUDES
     PUBLIC
         include/
     PRIVATE
+        ${PCRE_INCLUDE_DIRS}
         ${EXPAT_INCLUDE_DIRS}
 	${FREETYPE_INCLUDE_DIRS}
 	${SILLY_INCLUDE_DIRS}
@@ -54,7 +49,9 @@ DEFINES
     CEGUI_BUILD_STATIC_FACTORY_MODULE
     ${render_define}
     CEGUI_BUILD_EXPAT_PARSER_MODULE
+    CEGUI_HAS_PCRE_REGEX
 LINK
+    PCRE
     SILLY
     EXPAT
     ${FREETYPE_LIBRARIES}
@@ -64,4 +61,4 @@ PROPERTIES
 
 )
 
-SET(CEGUI_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include)
+SET(CEGUI_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include PARENT_SCOPE)

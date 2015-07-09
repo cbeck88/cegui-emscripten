@@ -1,5 +1,10 @@
 MESSAGE ( STATUS "CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
 
+set(CEGUI_SAMPLES_COMMON_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/common/include)
+
+MESSAGE ( STATUS "CEGUI_INCLUDE = " ${CEGUI_INCLUDE_DIRS}  )
+
+
 add_subdirectory(HelloWorld)
 add_subdirectory(LookNFeelOverview)
 

@@ -66,12 +66,33 @@ endif()
 # Add SDL2 and the in-tree libs
 find_package(SDL2 NO_CMAKE_FIND_ROOT_PATH)
 add_subdirectory(lib/lodepng lodepng)
+add_subdirectory(lib/pcre-8.37 pcre-8.37)
 add_subdirectory(lib/SILLY SILLY)
 add_subdirectory(lib/expat-2.1.0 expat-2.1.0)
 add_subdirectory(lib/cegui cegui)
 
-MESSAGE ( STATUS "ROOT CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
-add_subdirectory(lib/samples samples)
+#MESSAGE ( STATUS "ROOT CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
+#set(CEGUI_SAMPLES_COMMON_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/lib/samples/common/include)
+
+#add_subdirectory(lib/samples/HelloWorld HelloWorld)
+#add_subdirectory(lib/samples/LookNFeelOverview LookNFeelOverview)
+#add_subdirectory(lib/samples/GameMenu GameMenu)
+#add_subdirectory(lib/samples/HUDDemo HUDDemo)
+#add_subdirectory(lib/samples/DragDropDemo DragDropDemo)
+#add_subdirectory(lib/samples/InventoryDemo InventoryDemo)
+#add_subdirectory(lib/samples/EffectsDemo EffectsDemo)
+#add_subdirectory(lib/samples/FontDemo FontDemo)
+#add_subdirectory(lib/samples/Demo6 Demo6)
+#add_subdirectory(lib/samples/EditboxValidationDemo EditboxValidationDemo)
+#add_subdirectory(lib/samples/Minesweeper Minesweeper)
+#add_subdirectory(lib/samples/ScrollablePaneDemo ScrollablePaneDemo)
+#add_subdirectory(lib/samples/TabControlDemo TabControlDemo)
+#add_subdirectory(lib/samples/CommonDialogsDemo CommonDialogsDemo)
+#add_subdirectory(lib/samples/WidgetDemo WidgetDemo)
+#add_subdirectory(lib/samples/TextDemo TextDemo)
+#add_subdirectory(lib/samples/TreeDemo TreeDemo)
+
+
 MESSAGE ( STATUS "ROOT CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
 
 ### emscripten compiler provides OPENGL and SDL2
@@ -85,6 +106,26 @@ if(EMSCRIPTEN)
     )
 endif()
 
+#        CEGUICommonDialogsDemo
+#        CEGUIHelloWorldDemo
+#        CEGUILookNFeelOverviewDemo
+#        CEGUIGameMenuDemo
+#        CEGUIHUDDemo
+#        CEGUIDragDropDemo
+#        CEGUIInventoryDemo
+#        CEGUIEffectsDemo
+#        CEGUIFontDemo
+#        CEGUIDemo6
+#        CEGUIEditboxValidationDemo
+#        CEGUIMinesweeper
+#        CEGUIScrollablePaneDemo
+#        CEGUITabControlDemo
+#        CEGUICommonDialogsDemo
+#        CEGUIWidgetDemo
+#        CEGUITextDemo
+#        CEGUITreeDemo
+
+
 CreateProgram(${PROJECT_NAME}
 FILES
     src/SamplesFrameworkBase.cpp
@@ -95,17 +136,19 @@ FILES
     src/SampleData.cpp
     src/MetaDataWindowManager.cpp
     src/SamplesBrowserManager.cpp
+DIRS
+    lib/samples/**
 INCLUDES
     include/
     lib/samples/common/include/
-    lib/cegui/include
+    ${CEGUI_INCLUDE_DIRS}
     ${SDL2_INCLUDE_DIRS}
     lib/humble
 DEFINES
     $<$<BOOL:${EMSCRIPTEN}>:USE_HUMBLE_API>
 LINK
-    ${CEGUI_SAMPLES}
     cegui
+    PCRE
     SILLY
     EXPAT
     ${FREETYPE_LIBRARIES}

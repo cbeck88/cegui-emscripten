@@ -27,23 +27,8 @@
 #ifndef _CEGUICommonDialogsModule_h_
 #define _CEGUICommonDialogsModule_h_
 
-#if (defined( __WIN32__ ) || defined( _WIN32 )) && !defined(CEGUI_STATIC)
-#   ifdef CEGUICOMMONDIALOGS_EXPORTS
-#       define CEGUI_COMMONDIALOGS_API __declspec(dllexport)
-#   else
-#       define CEGUI_COMMONDIALOGS_API __declspec(dllimport)
-#   endif
-#else
-#   define CEGUI_COMMONDIALOGS_API
-#endif
+#define CEGUI_COMMONDIALOGS_API extern
 
-extern "C"
-/*!
-\brief
-Initialise common dialogs library ready for use.
-
-This should be called prior to creating any common dialog windows.
-*/
 CEGUI_COMMONDIALOGS_API void initialiseCEGUICommonDialogs();
 
 #endif

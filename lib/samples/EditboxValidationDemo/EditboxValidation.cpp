@@ -115,7 +115,7 @@ void EditboxValidation::deinitialise()
 /*************************************************************************
 Define the module function that returns an instance of the sample
 *************************************************************************/
-Sample& get_EditboxValidation()
+Sample& get_EditboxValidationDemo()
 {
     static EditboxValidation sample;
     return sample;
