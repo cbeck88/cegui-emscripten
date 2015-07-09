@@ -979,7 +979,7 @@ void GameMenuDemo::setupSelectionIconAnimations()
 /*************************************************************************
 Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_GameMenuDemo()
 {
     static GameMenuDemo sample;
     return sample;

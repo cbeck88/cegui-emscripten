@@ -146,7 +146,7 @@ bool LookNFeelOverviewDemo::handleSkinSelectionAccepted(const CEGUI::EventArgs& 
 /*************************************************************************
 Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_LookNFeelOverviewDemo()
 {
     static LookNFeelOverviewDemo sample;
     return sample;

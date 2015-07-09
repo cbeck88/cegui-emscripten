@@ -742,7 +742,7 @@ void EffectsDemo::initialiseEffects(CEGUI::Window* effectsWindow)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_EffectsDemo()
 {
     static EffectsDemo sample;
     return sample;

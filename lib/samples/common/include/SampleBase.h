@@ -28,6 +28,7 @@ author:     Lukas E Meindl
 #define _SampleBase_h_
 
 #include "Sample.h"
+#include "AllSamples.h"
 
 // This header serves as a base for all samples and is needed inside the
 // SamplesFramework as interface for Samples that will be loaded.

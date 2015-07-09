@@ -26,6 +26,7 @@ author:     Lukas E Meindl
 ***************************************************************************/
 #include "SampleData.h"
 #include "Sample.h"
+#include "AllSamples.h"
 
 #include "Samples_xmlHandler.h"
 
@@ -248,9 +249,17 @@ void SampleDataModule::deinitialise()
     SampleData::deinitialise();   
 }
 
+#define SAMPLE_CASE( X ) 		\
+do {					\
+	if (d_name == #X) {		\
+		d_sample = & get_##X(); \
+		return;			\
+	}				\
+} while (0)
+
 void SampleDataModule::getSampleInstanceFromDLL()
 {
-    assert(false && "This doesn't work in emscripten");
+//    assert(false && "This doesn't work in emscripten");
 /*    CEGUI::DynamicModule* sampleModule = new CEGUI::DynamicModule(d_name);
     getSampleInstance functionPointerGetSample = (getSampleInstance)sampleModule->getSymbolAddress(CEGUI::String(GetSampleInstanceFuncName));
 
@@ -261,7 +270,29 @@ void SampleDataModule::getSampleInstanceFromDLL()
     }
 
     d_sample =  &(functionPointerGetSample());*/
-}
+
+	SAMPLE_CASE( CommonDialogsDemo );
+	SAMPLE_CASE( HelloWorldDemo );
+	SAMPLE_CASE( LookNFeelOverviewDemo );
+	SAMPLE_CASE( GameMenuDemo );
+	SAMPLE_CASE( HUDDemo );
+	SAMPLE_CASE( DragDropDemo );
+	SAMPLE_CASE( InventoryDemo );
+	SAMPLE_CASE( EffectsDemo );
+	SAMPLE_CASE( FontDemo );
+	SAMPLE_CASE( Demo6 );
+	SAMPLE_CASE( EditboxValidation );
+	SAMPLE_CASE( Minesweeper );
+	SAMPLE_CASE( ScrollablePaneDemo );
+	SAMPLE_CASE( TabControlDemo );
+	SAMPLE_CASE( CommonDialogsDemo );
+	SAMPLE_CASE( WidgetDemo );
+	SAMPLE_CASE( TextDemo );
+	SAMPLE_CASE( TreeDemo );
+
+        CEGUI::String errorMessage = "Could not find sample " + d_name;
+        CEGUI_THROW(CEGUI::InvalidRequestException(errorMessage.c_str()));
+} 
 
 void SampleDataModule::onEnteringSample()
 {

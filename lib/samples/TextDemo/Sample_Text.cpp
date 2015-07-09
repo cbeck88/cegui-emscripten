@@ -240,7 +240,8 @@ void TextDemo::deinitialise()
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_TextDemo()
+
 {
     static TextDemo sample;
     return sample;

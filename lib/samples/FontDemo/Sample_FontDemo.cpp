@@ -707,7 +707,7 @@ void FontDemo::initialiseDemoFonts()
 /*************************************************************************
 Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_FontDemo()
 {
     static FontDemo sample;
     return sample;

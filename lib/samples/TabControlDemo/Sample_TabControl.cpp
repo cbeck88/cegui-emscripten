@@ -435,7 +435,7 @@ public:
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_TabControlDemo()
 {
     static TabControlDemo sample;
     return sample;

@@ -145,7 +145,7 @@ bool DragDropDemo::handle_CloseButton(const CEGUI::EventArgs&)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_DragDropDemo()
 {
     static DragDropDemo sample;
     return sample;

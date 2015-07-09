@@ -1,3 +1,5 @@
+MESSAGE ( STATUS "CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
+
 add_subdirectory(HelloWorld)
 add_subdirectory(LookNFeelOverview)
 
@@ -17,3 +19,7 @@ add_subdirectory(CommonDialogsDemo)
 add_subdirectory(WidgetDemo)
 add_subdirectory(TextDemo)
 add_subdirectory(TreeDemo)
+
+MESSAGE ( STATUS "CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
+
+set(CEGUI_SAMPLES ${CEGUI_SAMPLES} ${CEGUI_SAMPLES} PARENT_SCOPE)

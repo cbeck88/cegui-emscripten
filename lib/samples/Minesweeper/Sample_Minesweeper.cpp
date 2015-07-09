@@ -519,7 +519,7 @@ bool MinesweeperSample::boardDiscover(const Location& loc)
 }
 
 
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_Minesweeper()
 {
     static MinesweeperSample sample;
     return sample;

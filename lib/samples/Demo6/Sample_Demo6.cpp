@@ -717,7 +717,7 @@ bool Demo6Sample::handleContentsChanged(const CEGUI::EventArgs& args)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_Demo6()
 {
     static Demo6Sample sample;
     return sample;

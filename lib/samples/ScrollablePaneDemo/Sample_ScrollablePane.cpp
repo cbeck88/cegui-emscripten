@@ -249,7 +249,7 @@ bool ScrollablePaneSample::hotkeysHandler(const CEGUI::EventArgs& e)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_ScrollablePaneDemo()
 {
     static ScrollablePaneSample sample;
     return sample;

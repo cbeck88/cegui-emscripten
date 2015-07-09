@@ -1036,7 +1036,7 @@ void WidgetDemo::initMenubar(CEGUI::Menubar* menuBar)
 /*************************************************************************
 Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_WidgetDemo()
 {
     static WidgetDemo sample;
     return sample;

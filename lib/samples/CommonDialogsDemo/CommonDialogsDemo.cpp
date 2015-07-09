@@ -113,7 +113,7 @@ bool CommonDialogsDemo::initialise(CEGUI::GUIContext* guiContext)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_CommonDialogsDemo()
 {
     static CommonDialogsDemo sample;
     return sample;

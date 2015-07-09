@@ -145,7 +145,7 @@ void InventoryDemo::deinitialise()
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_InventoryDemo()
 {
     static InventoryDemo sample;
     return sample;

@@ -146,7 +146,7 @@ bool HelloWorldDemo::handleHelloWorldClicked(const CEGUI::EventArgs& args)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_HelloWorldDemo()
 {
     static HelloWorldDemo sample;
     return sample;

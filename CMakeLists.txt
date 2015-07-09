@@ -69,7 +69,10 @@ add_subdirectory(lib/lodepng lodepng)
 add_subdirectory(lib/SILLY SILLY)
 add_subdirectory(lib/expat-2.1.0 expat-2.1.0)
 add_subdirectory(lib/cegui cegui)
+
+MESSAGE ( STATUS "ROOT CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
 add_subdirectory(lib/samples samples)
+MESSAGE ( STATUS "ROOT CEGUI_SAMPLES = " ${CEGUI_SAMPLES}  )
 
 ### emscripten compiler provides OPENGL and SDL2
 if(EMSCRIPTEN)
@@ -101,6 +104,7 @@ INCLUDES
 DEFINES
     $<$<BOOL:${EMSCRIPTEN}>:USE_HUMBLE_API>
 LINK
+    ${CEGUI_SAMPLES}
     cegui
     SILLY
     EXPAT
@@ -110,7 +114,6 @@ LINK
     ${SDL2_LIBRARIES}
     ${OPENGLES2_LIBRARIES}
     lodepng
-    ${CEGUI_SAMPLES}
 #FLAGS
 #    $<$<CXX_COMPILER_ID:GNU>:-std=c++11>
 #    $<$<CXX_COMPILER_ID:Clang>:-std=c++11>

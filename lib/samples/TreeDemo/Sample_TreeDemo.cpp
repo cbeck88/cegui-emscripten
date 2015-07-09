@@ -379,7 +379,7 @@ bool TreeDemoSample::handleEventBranchClosed(const CEGUI::EventArgs& args)
 /*************************************************************************
     Define the module function that returns an instance of the sample
 *************************************************************************/
-extern "C" SAMPLE_EXPORT Sample& getSampleInstance()
+Sample& get_TreeDemo()
 {
     static TreeDemoSample sample;
     return sample;
