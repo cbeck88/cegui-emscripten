@@ -7,25 +7,28 @@ Some changes needed to be made to the samples framework so that it is all linked
 There was also a complete replacement of the build system. This was in order to make it easier to build on emscripten without compromising the ability to make native builds.
 
 Reorg / renames:
-- datafiles/ 			-> assets/
-- samples_framework/include 	-> include/
-- samples_framework/src		-> src/
-- samples/			-> lib/samples/
-- CEGUI/			-> lib/CEGUI/
 
-External dependencies (for emscripten build)
+CEGUI v0-8 branch               |  here
+===============================================
+- datafiles/ 			| assets/
+- samples_framework/include 	| include/
+- samples_framework/src		| src/
+- samples/			| lib/samples/
+- CEGUI/			| lib/CEGUI/
+
+External dependencies (for emscripten build)  
 - CMake version >= 2.8.12	
       http://www.cmake.org/
-- Emscripten (master branch)
+- Emscripten (master branch)  
       http://www.emscripten.org/
 - That's it!
 
 For a detailed installation guide please see here: http://developer.humblebundle.com/post/112252930481/developing-for-asm-js-using-sdl2
 
 External dependencies (for native build)
-- CMake version >= 2.8.12
+- CMake version >= 2.8.12  
       http://www.cmake.org/
-- A C++11 compiler (tested with gcc 4.8.4 and clang 3.6)
+- A C++11 compiler (tested with gcc 4.8.4 and clang 3.6)  
 - OpenGLES2 development libraries
 - SDL2 development libraries
 - libpng development libraries
