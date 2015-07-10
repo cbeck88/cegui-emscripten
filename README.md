@@ -12,6 +12,8 @@ There was also a complete replacement of the build system. This was in order to 
       http://www.cmake.org/
 - Emscripten (master branch)  
       http://www.emscripten.org/
+- Node.js (needed by Emscripten. v0.10 suffices, but a more recent version like v0.12.4 will allow the js optimizer portion of Emscripten to run faster)
+
 - That's it!
 
 For a detailed installation guide please see here: http://developer.humblebundle.com/post/112252930481/developing-for-asm-js-using-sdl2
@@ -25,6 +27,9 @@ For a detailed installation guide please see here: http://developer.humblebundle
 - SDL2 development libraries
 - libpng development libraries
 - zlib development libraries      
+
+**Note:** There is a decent chance that you will have to reconfigure the CMake scripts / config headers appropriately for your system, in the folders `lib/expat2.1.0`, `lib/freetype2.5.5`, `lib/SILLY`, and/or `lib/pcre8.37`.  
+If you have problems it may be easier just to skip the native build on your machine and only try to use the emscripten build, which should be totally portable.  
 
 # How to build
 
