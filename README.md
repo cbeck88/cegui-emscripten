@@ -35,7 +35,7 @@ If you have problems it may be easier just to skip the native build on your mach
 
 Currently you must build using CMake at command line. I placed appropriate commands in the shell scripts at repo root "clean_build.sh", "clean_build-clang.sh", "clean_build_em.sh" etc. (These work for me on linux mint 17 after installing appropriate libraries using apt-get.)  
   
-In principle it should be possible to build for windows / OS X, but it is likely that it will require a very large amount of work. I brought all the CEGUI external dependencies in tree -- this is because emscripten is a bit finnicky and can have problems if libraries are not compiled using the same optimization settings and such, and it ensures consistency between the native build and em build .
+In principle it should be possible to build for windows / OS X, but it is likely that it will require some amount of work. I brought all the CEGUI external dependencies in tree -- this is because emscripten is a bit finnicky and can have problems if libraries are not compiled using the same optimization settings and such, and it ensures consistency between the native build and em build. Sometimes this means that I deleted an "autotools" configuration system and tried to rewrite it in my cmake framework. If your build is broken on windows / OS X, I suggest to go into /lib/ folder and have a look at CMakeLists.txt files which I added, and also any "config.h" inclusion files for possible configuration issues.
 
 
 # Notes
