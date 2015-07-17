@@ -7,7 +7,7 @@ Some changes needed to be made to the samples framework so that it is all linked
 There was also a complete replacement of the build system. This was in order to make it easier to build on emscripten without compromising the ability to make native builds.  
 
 **Note**: The targetted OpenGL version is, OpenGLES 2.0, with Vertex Array Object extension.
-Not all devices have this, but the extension was made core in WebGL 2.0. (https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)
+Not all devices have this, but it seems that many (most?) of them do. The extension was made core in WebGL 2.0. (https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)
 
 # External dependencies (for emscripten build)  
 
