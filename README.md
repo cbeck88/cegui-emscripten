@@ -6,6 +6,9 @@ The most significant code change was porting the OpenGL3 core calls to OpenGLES2
 Some changes needed to be made to the samples framework so that it is all linked at compile time as well.  
 There was also a complete replacement of the build system. This was in order to make it easier to build on emscripten without compromising the ability to make native builds.  
 
+**Note**: The targetted OpenGL version is, OpenGLES 2.0, with Vertex Array Object extension.
+Not all devices have this, but the extension was made core in WebGL 2.0. (https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)
+
 # External dependencies (for emscripten build)  
 
 - CMake version >= 2.8.12	
