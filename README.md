@@ -34,6 +34,14 @@ For a detailed installation guide please see here: http://developer.humblebundle
 **Note:** There is a decent chance that you will have to reconfigure the CMake scripts / config headers appropriately for your system, in the folders `lib/expat2.1.0`, `lib/freetype2.5.5`, `lib/SILLY`, and/or `lib/pcre8.37`.  
 If you have problems it may be easier just to skip the native build on your machine and only try to use the emscripten build, which should be totally portable.  
 
+At a **minimum**, to link on windows / OS X you will most likely have to get rid of the define "GL_GLEXT_PROTOTYPES" here: 
+
+https://github.com/cbeck88/cegui-emscripten/blob/ed06988b6047d33ea5ec312fc5a1a4062295d0ea/lib/cegui/src/RendererModules/OpenGLES2/GLES2_headers.hpp#L4
+
+which links to exported gl extension symbols, rather than use the more standard (and portable) function fetch mechanism.
+
+(See the effect of the #define here:  https://github.com/cbeck88/cegui-emscripten/blob/ed06988b6047d33ea5ec312fc5a1a4062295d0ea/lib/SDL2/include/SDL2/SDL_opengles2_gl2ext.h#L1182)
+
 # How to build
 
 Currently you must build using CMake at command line. I placed appropriate commands in the shell scripts at repo root "clean_build.sh", "clean_build-clang.sh", "clean_build_em.sh" etc. (These work for me on linux mint 17 after installing appropriate libraries using apt-get.)  
